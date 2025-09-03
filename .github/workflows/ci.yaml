@@ -27,11 +27,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: untrack few Files
-        run: |
-          git rm -r --cached 'models\vectorizer.pkl'
-          git rm -r --cached 'models/model.pkl'
-
       - name: run pipeline
         env:
           DAGSHUB_PAT: ${{ secrets.DAGSHUB_PAT }}
