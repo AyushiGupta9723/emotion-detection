@@ -27,6 +27,13 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: untrack files
+        run: |
+          git rm -r --cached 'models\vectorizer.pkl'
+          git rm -r --cached 'models\model.pkl'
+          git rm -r --cached 'reports\metrics.json'
+          git rm -r --cached 'reports\experiment_info.json'
+
       - name: Configure MLflow + DagsHub
         run: |
           echo "MLFLOW_TRACKING_URI=https://dagshub.com/${{ secrets.DAGSHUB_USERNAME }}/<your-repo-name>.mlflow" >> $GITHUB_ENV
