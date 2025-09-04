@@ -87,12 +87,5 @@ target/
 
 # Mypy cache
 .mypy_cache/
-/metrics.json
-/models/model.pkl
-/model.pkl
-/models/vectorizer.pkl
-/experiment_info.json
-/metrics.json
-/experiment_info.json   
-/reports/experiment_info.json
-/reports/metrics.json
+
+
