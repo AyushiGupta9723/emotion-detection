@@ -5,7 +5,8 @@ import mlflow
 import logging
 import os
 import dagshub
-
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Set up DagsHub credentials for MLflow tracking
@@ -22,6 +23,9 @@ repo_name = "emotion-detection"
 
 # Set up MLflow tracking URI
 mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
+
+
+
 # logging configuration
 logger = logging.getLogger('model_registration')
 logger.setLevel('DEBUG')
